@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<head>
+    <title>🔴Youtube</title>
+    <style>
+        /* style */
+        .icon-bar {
+            width: 73px;
+            position: fixed;
+            height: 100%;
+            top: 0;
+            left: 0;
+            padding-top: 18px;
+            background-color: #212121;
+            text-align: center;
+        }
+
+        .icon-bar a {
+            display: block;
+            text-align: center;
+            padding: 16px 4px;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 11px;
+            text-decoration: none;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .icon-bar a:hover {
+            background-color: #000;
+        }
+
+        .fa {
+            font-size: 20px;
+            text-align: center;
+        }
+
+        .search {
+            width: 53%;
+            position: relative;
+        }
+
+        /* =================== */
+        * {
+            background-color: rgb(41, 39, 39);
+            color: white;
+        }
+
+        #nav {
+            height: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            border: 1px solid rgb(197, 185, 185);
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            /* background-color: rgb(255, 255, 255); */
+        }
+
+        #logo {
+            width: 20%;
+            height: 40px;
+        }
+
+        #search {
+            width: 40%;
+            margin-top: 5px;
+            height: 40px;
+        }
+
+        #speaker {
+            margin-top: 5px;
+            margin-left: 0%;
+            height: 40px;
+        }
+
+        #spk {
+            height: 25px;
+            width: 85%;
+            border-radius: 50px;
+        }
+
+        #name {
+            width: 85%;
+            height: 25px;
+            font-size: 17px;
+            padding-left: 15px;
+
+        }
+
+        #srch {
+            height: 15px;
+            width: 25px;
+        }
+
+        #btn {
+            vertical-align: baseline;
+        }
+
+        .settings {
+            height: 30px;
+            width: 200px;
+            margin-left: 17%;
+        }
+
+        .settings ul {
+            list-style: none;
+            width: 50%;
+            margin-top: 0px;
+            float: right;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+        }
+
+        .settings li {
+            margin: 0px 13px
+        }
+
+        #userImg {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        #disp {
+            padding-left: 2%;
+            display: grid;
+            grid-template-columns: repeat(4, 23%);
+            grid-gap: 2%;
+            padding-top: 1%;
+            margin-top: 1%;
+        }
+
+        #two {
+            display: grid;
+            grid-template-columns: repeat(20%, 50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="two">
+        <div class="icon-bar">
+            <i class="fa fa-bars" style="font-size:20px;color: white;"></i><br><br>
+            <a href="/"><i class="fa fa-home"></i><br><br> Home</a>
+            <a href="#"><i class="fa fa-search"></i><br><br>Explore</a>
+            <a href="#"><i class="fa fa-envelope"></i><br><br>Subscriptions</a>
+            <a href="#"><i class="fa fa-globe"></i><br><br>Libraries</a>
+        </div>
+        <div style="margin-left: 5%;">
+            <div id="nav">
+                <div id="logo">
+                    <img id="log" height="35px" width="50%" src="./images/logo.png" alt="" />
+                </div>
+
+
+                <div class="search" id="search">
+                    <input type="text" id="name" placeholder="Search" style="background-color: black;">
+                    <button id="btn">
+                        <i class="fa fa-search" style="font-size:20px"></i></button>
+                </div>
+                <!-- <div id="search">
+                    <input id="name" placeholder="Search" type="text" />
+                    <button id="btn">
+                        <img id="srch"
+                            src="https://w7.pngwing.com/pngs/605/56/png-transparent-search-icon-computer-icons-android-desktop-search-button-internet-share-icon-search-button.png" />
+                    </button>
+                </div> -->
+                <div id="speaker">
+                    <img id="spk"
+                        src="https://www.pngitem.com/pimgs/m/10-103234_speaker-icon-png-image-free-download-searchpng-google.png" />
+                </div>
+                <div class="settings">
+                    <ul>
+                        <li><i class="fa fa-video-camera" style="font-size:22px"></i></li>
+                        <li><i class="fa fa-bell" style="font-size:22px"></i></li>
+                        <li><img id="userImg" src="https://cdn-icons-png.flaticon.com/512/149/149071.png" alt=""></li>
+                    </ul>
+                </div>
+
+            </div>
+            <div id="disp"></div>
+        </div>
+    </div>
+
+
+
+</body>
+
+</html>
+<script>
+    let api = "AIzaSyCBFEIwOu5cLZbCEskHpihsD3jq_T6G4fs";
+    let disp = document.getElementById("disp");
+
+    async function searchvdo() {
+        try {
+            let name = document.getElementById("name").value;
+            let res = await fetch(`https://www.googleapis.com/youtube/v3/search?q=${name}&key=${api}&type=video&maxResults=20&part=snippet`);
+            let data = await res.json();
+            console.log("data is:", data);
+            let arrayvdo = data.items;
+            display(arrayvdo)
+        }
+        catch (err) {
+            console.log("error is:", err);
+        }
+        finally {
+            console.log("done");
+        }
+    }
+
+    let btn = document.getElementById("btn");
+    btn.addEventListener("click", searchvdo);
+    trendingvdo();
+
+    let inputBox = document.getElementById("name");
+    inputBox.oninput = debounc;
+
+    let id;
+    function debounc() {
+        clearTimeout(id);
+        id = setTimeout(function () {
+            searchvdo();
+        }, 500)
+    }
+
+    const display = (arr) => {
+        console.log(arr);
+        disp.innerHTML = null;
+        arr.forEach(({ snippet, id: { videoId } }) => {
+            // console.log(snippet);
+            let div = document.createElement("div");
+            div.style.border = "1px solid gray";
+
+            let img = document.createElement("img");
+            let url = snippet.thumbnails.medium.url;
+            img.src = url;
+            img.style.width = "100%";
+
+            let title = snippet.title;
+            let h4 = document.createElement("h4");
+            h4.innerHTML = title;
+
+            let data = { arr, snippet, videoId };
+            div.append(img, h4);
+
+            div.addEventListener("click", function () {
+                // alert("clicked")
+                showvdo(data)
+            })
+            disp.append(div);
+
+        });
+
+    }
+
+    var showvdo = (data) => {
+        console.log(data);
+        localStorage.setItem("clickvdo", JSON.stringify(data));
+        window.open("video.html");
+    }
+
+    async function trendingvdo() {
+        try {
+            let res = await fetch(`https://www.googleapis.com/youtube/v3/search?q=trendingsong&key=${api}&type=video&maxResults=20&part=snippet`);
+            let data = await res.json();
+            console.log("data is:", data);
+            let arrayvdo = data.items;
+            display(arrayvdo);
+        }
+        catch (err) {
+            console.log("error is:", err);
+        }
+        finally {
+            console.log("done");
+        }
+    }
+
+
+</script>
