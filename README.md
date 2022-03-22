@@ -1,23 +1,23 @@
-# Youtube_Clone
+# Youtube_Clone ❤
 Youtube is a online video sharing and social media platform. Users can enjoy the video and music , and also upload original content and share it with friends, family and the world.
 
-# Technologies Used
+# Technologies Used ☑
 * HTML
 * CSS
 * JavaScript
 
-# Tools
+# Tools ☑
 * VS Code
 * Github
 
-# Functionalities
+# Functionalities 🌟
 * Home Page
 * Open video page
 * Trending video
 * Debouncing 
 * Good User Interface
 
-# Snapshot
+# Snapshot 📸
 ## Home Page
 ![HomePage](https://imgbox.com/9CiAbysk)
 
