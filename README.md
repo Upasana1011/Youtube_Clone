@@ -1,23 +1,24 @@
 # Youtube_Clone
 
 # Technologies Used
-HTML
-CSS
-JavaScript
+* HTML
+* CSS
+* JavaScript
 
 # Tools
-VS Code
-Github
+* VS Code
+* Github
 
 # Functionalities
-Home Page
-Open video page
-Trending video
-Debouncing 
-Good User Interface
+* Home Page
+* Open video page
+* Trending video
+* Debouncing 
+* Good User Interface
 
-Home Page
+#Images
+* Home Page
 
-Video Page
+* Video Page
 
-Video in full screen 
+* Video in full screen 
