@@ -1,4 +1,5 @@
 # Youtube_Clone
+Youtube is a online video sharing and social media platform. Users can enjoy the video and music , and also upload original content and share it with friends, family and the world.
 
 # Technologies Used
 * HTML
@@ -16,9 +17,15 @@
 * Debouncing 
 * Good User Interface
 
-#Images
-* Home Page
+# Snapshot
+## Home Page
+![HomePage](https://imgbox.com/yxQBe88D)
 
-* Video Page
+## Searching
+![SearchingPage](https://imgbox.com/rWkJBxhL)
 
-* Video in full screen 
+## Video Page
+![VideoPage](https://imgbox.com/uZLpzslq)
+
+## Video in full screen 
+![FullScreen](https://imgbox.com/wKEFtBWY)
