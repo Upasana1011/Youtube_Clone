@@ -2,34 +2,7 @@
 <html lang="en">
 <head>
     <title>video</title>
-    <style>
-        #main{
-            padding:3%;
-            display: flex;
-            height: 700px;
-            background-color: rgb(63, 58, 58);
-            color: white;
-        }
-        #vdetail{
-            flex: 3;
-        }
-        #inside_vdetail{
-            box-shadow: rgba(221, 228, 231, 0.2) 0px 8px 24px;;
-            height: 100%;
-           padding-left: 2%;
-           padding-top: 12px;
-        }
-        #suggest{
-            flex: 1;
-            padding-left: 3%;
-            vertical-align: top;
-            overflow-y:auto;
-        }
-        #box{
-            margin-top: -5px;
-            vertical-align: top;
-        }
-    </style>
+    <link rel="stylesheet" href="./video.css" />
 </head>
 <body>
     <div id="main">
@@ -40,43 +13,6 @@
     </div>
 </body>
 </html>
-<script>
-    let vdata=JSON.parse(localStorage.getItem("clickvdo"));
-    console.log(vdata);
-
-    let iframe=document.createElement("iframe");
-    iframe.src=`https://www.youtube.com/embed/${vdata.videoId}`;
-    iframe.src.height="50%";
-    iframe.height="70%";
-    iframe.width="98%";
-    iframe.setAttribute("allowfullscreen",true);
-
-     let head=document.createElement("h1");
-     head.textContent=vdata.snippet.title;
-     let desp=document.createElement("h3");
-     desp.textContent=vdata.snippet.description;
-
-    let vdetail=document.getElementById("vdetail");
-    let inside_vdetail=document.getElementById("inside_vdetail");
-    inside_vdetail.height="100%";
-    inside_vdetail.append(iframe,head,desp);
-    vdetail.append(inside_vdetail);
-
-
-    let suggest=vdata.arr;
-    console.log('suggest:', suggest);
-suggest.forEach(element => {   
-
-    let box=document.createElement("div");
-    box.setAttribute("id","box");
-    let ifram=document.createElement("iframe");
-    // console.log(element);
-    ifram.src=`https://www.youtube.com/embed/${element.id.videoId}&maxResults=${8}`;
-    ifram.setAttribute("allowfullscreen",true);
-    ifram.width="98%";
-    box.append(ifram);
-    document.getElementById("suggest").append(box);
-     
-});
+<script src="./video.js">
 
 </script>
