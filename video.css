@@ -1,0 +1,26 @@
+#main{
+    padding:3%;
+    display: flex;
+    height: 700px;
+    background-color: rgb(63, 58, 58);
+    color: white;
+}
+#vdetail{
+    flex: 3;
+}
+#inside_vdetail{
+    box-shadow: rgba(221, 228, 231, 0.2) 0px 8px 24px;;
+    height: 100%;
+   padding-left: 2%;
+   padding-top: 12px;
+}
+#suggest{
+    flex: 1;
+    padding-left: 3%;
+    vertical-align: top;
+    overflow-y:auto;
+}
+#box{
+    margin-top: -5px;
+    vertical-align: top;
+}
