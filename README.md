@@ -19,13 +19,13 @@ Youtube is a online video sharing and social media platform. Users can enjoy the
 
 # Snapshot 📸
 ## Home Page
-![HomePage](https://imgbox.com/9CiAbysk)
+![HomePage](https://imgbox.com/YcJF5jS7)
 
 ## Searching
-![SearchingPage](https://imgbox.com/4cSdLC4M)
+![SearchingPage](https://imgbox.com/HKOrVEFn)
 
 ## Video Page
-![VideoPage](https://imgbox.com/bopxyBko)
+![VideoPage](https://imgbox.com/FS8IwoU0)
 
 ## Video in full screen 
-![FullScreen](https://imgbox.com/obBYYhML)
+![FullScreen](https://imgbox.com/2CLMlG7s)
